@@ -28,4 +28,28 @@ public class CalculatorTest {
         assertTrue(result);
 
     }
+
+    @Test
+    public void shouldReturnMessageTooManyPeople(){
+
+        int value = 30;
+
+        String message = Calculator.alarmMessage(value);
+
+        assertEquals("Zu viele Personen", message);
+    }
+
+    @Test
+    public void shouldReturnMessagePeopleAmountOk(){
+
+        int value = 29;
+
+        String message = Calculator.alarmMessage(value);
+
+        assertEquals("Maximale Personenzahl nicht überschritten", message);
+    }
+
+
+
+
 }
