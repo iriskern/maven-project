@@ -7,4 +7,14 @@ public class Calculator {
     public static boolean moreThan100(int val){
         return val > 100;
     }
+
+    public static String alarmMessage(int peopleInShop){
+        if (peopleInShop >= 30) {
+            return "Zu viele Personen";
+        } else {
+            return "Maximale Personenzahl nicht überschritten";
+        }
+    }
+
+
 }
