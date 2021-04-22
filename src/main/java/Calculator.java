@@ -1,10 +1,6 @@
 public class Calculator {
 
-    public static void main(String[] args) {
-        System.out.println(calculateFaculty(3));
-    }
-
-    public static int add(int val1, int val2){
+     public static int add(int val1, int val2){
         return val1 + val2;
     }
 
@@ -39,7 +35,6 @@ public class Calculator {
         return result;
     }
 
-
     public static int calculateFacultyWithWhileLoop(int numberToCalculate){
         int result = 1;
         int i=1;
@@ -48,6 +43,13 @@ public class Calculator {
             i++;
         }
         return result;
+    }
+
+    public static int calculateFacultyWithRecusion(int numberToCalculate){
+        if(numberToCalculate < 1){
+            return 1;
+        }
+        return calculateFacultyWithRecusion(numberToCalculate -1) * numberToCalculate;
     }
 
 }

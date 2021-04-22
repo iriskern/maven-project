@@ -67,4 +67,10 @@ public class CalculatorTest {
         assertEquals(expectedValue, facultyResult);
     }
 
+    @ParameterizedTest(name = "{0} faculty is {1}")
+    @CsvSource({"0,1", "1,1", "2,2", "3,6"})
+    public void shouldDefenitelyReturnFaculty(int numberToCalculate, int expectedValue){
+        int facultyResult = Calculator.calculateFacultyWithRecusion(numberToCalculate);
+        assertEquals(expectedValue, facultyResult);
+    }
 }
