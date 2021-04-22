@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -51,6 +53,18 @@ public class CalculatorTest {
         assertEquals("Maximale Personenzahl nicht überschritten", alarmMessage);
     }
 
+    @ParameterizedTest(name = "{0} faculty is {1}")
+    @CsvSource({"0,1", "1,1", "2,2", "3,6"})
+    public void shouldReturnFaculty(int numberToCalculate, int expectedValue){
+        int facultyResult = Calculator.calculateFaculty(numberToCalculate);
+        assertEquals(expectedValue, facultyResult);
+    }
 
+    @ParameterizedTest(name = "{0} faculty is {1}")
+    @CsvSource({"0,1", "1,1", "2,2", "3,6"})
+    public void shouldAlsoReturnFaculty(int numberToCalculate, int expectedValue){
+        int facultyResult = Calculator.calculateFacultyWithWhileLoop(numberToCalculate);
+        assertEquals(expectedValue, facultyResult);
+    }
 
 }
