@@ -9,27 +9,22 @@ public class Calculator {
     }
 
     public static String alarmMessage(int peopleInShop, String alarmLevel){
-        int numberOfPeopleAllowed = 0;
-        switch (alarmLevel){
-            case "red":
-                numberOfPeopleAllowed = 0;
-                break;
-            case "yellow":
-                numberOfPeopleAllowed = 30;
-                break;
-            case "green":
-                numberOfPeopleAllowed = 60;
-                break;
-            default:
-                System.out.println("keine Alarmstufe");
-                break;
-        }
+        int numberOfPeopleAllowed = getNumberOfPeopleAllowed(alarmLevel);
 
         if (peopleInShop > numberOfPeopleAllowed) {
             return "Zu viele Personen";
         } else {
             return "Maximale Personenzahl nicht überschritten";
         }
+    }
+
+    private static int getNumberOfPeopleAllowed(String alarmLevel) {
+        return switch (alarmLevel) {
+            case "red" -> 0;
+            case "yellow" -> 30;
+            case "green" -> 60;
+            default -> 0;
+        };
     }
 
 
