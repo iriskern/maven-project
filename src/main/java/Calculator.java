@@ -39,6 +39,7 @@ public class Calculator {
         return result;
     }
 
+
     public static int calculateFacultyWithWhileLoop(int numberToCalculate){
         int result = 1;
         int i=1;
@@ -48,6 +49,5 @@ public class Calculator {
         }
         return result;
     }
-
 
 }
