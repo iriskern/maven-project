@@ -32,23 +32,24 @@ public class CalculatorTest {
     @Test
     public void shouldReturnMessageTooManyPeople(){
 
-        int value = 30;
+        int peopleInShop = 1;
+        String alarmLevel = "red";
 
-        String message = Calculator.alarmMessage(value);
+        String alarmMessage = Calculator.alarmMessage(peopleInShop, alarmLevel);
 
-        assertEquals("Zu viele Personen", message);
+        assertEquals("Zu viele Personen", alarmMessage);
     }
 
     @Test
     public void shouldReturnMessagePeopleAmountOk(){
 
-        int value = 29;
+        int peopleInShop = 60;
+        String alarmLevel = "green";
 
-        String message = Calculator.alarmMessage(value);
+        String alarmMessage = Calculator.alarmMessage(peopleInShop, alarmLevel);
 
-        assertEquals("Maximale Personenzahl nicht überschritten", message);
+        assertEquals("Maximale Personenzahl nicht überschritten", alarmMessage);
     }
-
 
 
 

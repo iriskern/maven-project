@@ -8,8 +8,24 @@ public class Calculator {
         return val > 100;
     }
 
-    public static String alarmMessage(int peopleInShop){
-        if (peopleInShop >= 30) {
+    public static String alarmMessage(int peopleInShop, String alarmLevel){
+        int numberOfPeopleAllowed = 0;
+        switch (alarmLevel){
+            case "red":
+                numberOfPeopleAllowed = 0;
+                break;
+            case "yellow":
+                numberOfPeopleAllowed = 30;
+                break;
+            case "green":
+                numberOfPeopleAllowed = 60;
+                break;
+            default:
+                System.out.println("keine Alarmstufe");
+                break;
+        }
+
+        if (peopleInShop > numberOfPeopleAllowed) {
             return "Zu viele Personen";
         } else {
             return "Maximale Personenzahl nicht überschritten";
