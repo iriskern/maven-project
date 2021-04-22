@@ -1,5 +1,9 @@
 public class Calculator {
 
+    public static void main(String[] args) {
+        System.out.println(calculateFaculty(3));
+    }
+
     public static int add(int val1, int val2){
         return val1 + val2;
     }
@@ -13,18 +17,26 @@ public class Calculator {
 
         if (peopleInShop > numberOfPeopleAllowed) {
             return "Zu viele Personen";
-        } else {
-            return "Maximale Personenzahl nicht überschritten";
         }
+        return "Maximale Personenzahl nicht überschritten";
+
     }
 
-    private static int getNumberOfPeopleAllowed(String alarmLevel) {
+    public static int getNumberOfPeopleAllowed(String alarmLevel) {
         return switch (alarmLevel) {
             case "red" -> 0;
             case "yellow" -> 30;
             case "green" -> 60;
             default -> 0;
         };
+    }
+
+    public static int calculateFaculty(int numberToCalculate){
+        int result = 1;
+        for(int i=1; i <= numberToCalculate; i++){
+            result *= i;
+        }
+        return result;
     }
 
 
