@@ -12,4 +12,11 @@ public class ArrayTest {
         assertArrayEquals(expectedArray, methodArray);
     }
 
+    @Test
+    public void shouldReturnEmptyArray(){
+        String[] expectedArray = {};
+        String[] methodArray = Array.students(0);
+
+        assertArrayEquals(expectedArray, methodArray);
+    }
 }
